@@ -1,0 +1,80 @@
+{
+    "name": "theme-lens-core",
+    "displayName": "ThemeLens: Token Hover for Tailwind",
+    "description": "Hover a preview of custom Tailwind classes and see the underlying CSS values used in the theme",
+    "version": "1.0.0",
+    "publisher": "ltns",
+    "author": "Loubna",
+    "license": "MIT",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/loubnalts/theme-lens"
+    },
+    "engines": {
+        "vscode": "^1.114.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:javascript",
+        "onLanguage:typescriptreact",
+        "onLanguage:html",
+        "onCommand:extension.scanClasses"
+    ],
+    "extensionKind": [
+        "workspace"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "theme-lens.showTokenInfo",
+                "title": "ThemeLens: Show Token Info"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "pnpm run package",
+        "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+        "watch": "npm-run-all -p watch:*",
+        "watch:esbuild": "node esbuild.js --watch",
+        "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+        "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+        "check-types": "tsc --noEmit",
+        "lint": "eslint src",
+        "test": "vscode-test",
+        "unit-test": "jest"
+    },
+    "devDependencies": {
+        "@types/estree": "^1.0.9",
+        "@types/jest": "^30.0.0",
+        "@types/lodash": "^4.17.24",
+        "@types/mocha": "^10.0.10",
+        "@types/node": "22.x",
+        "@types/static-eval": "^0.2.34",
+        "@types/vscode": "^1.110.0",
+        "@vscode/test-cli": "^0.0.12",
+        "@vscode/test-electron": "^2.5.2",
+        "esbuild": "^0.27.3",
+        "eslint": "^9.39.3",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.6",
+        "jest": "^30.3.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "3.8.4",
+        "ts-jest": "^29.4.9",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.56.1"
+    },
+    "dependencies": {
+        "acorn": "^8.17.0",
+        "jiti": "^2.7.0",
+        "lodash": "^4.18.1",
+        "static-eval": "^2.1.1"
+    }
+}
