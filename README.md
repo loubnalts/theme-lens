@@ -1,3 +1,8 @@
+![build](https://img.shields.io/github/actions/workflow/status/loubnalts/theme-lens/build.yml)
+[![Marketplace](https://vsmarketplacebadges.dev/version-short/ltns.theme-lens-core.svg)](https://marketplace.visualstudio.com/items?itemName=ltns.theme-lens-core)
+![Open VSX](https://img.shields.io/open-vsx/v/ltns/theme-lens-core)
+![License](https://img.shields.io/github/license/loubnalts/theme-lens)
+
 # ThemeLens for Tailwind
 
 Hover a preview of custom Tailwind classes and see the underlying CSS values used in your theme.
